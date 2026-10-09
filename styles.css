@@ -94,6 +94,7 @@ button { font: inherit; }
 .reverse-layout { grid-template-columns: 1.13fr .87fr; }
 .lesson-side h2 { max-width: 450px; font-size: 40px; margin-top: 15px; }
 .lesson-side > p { color: #a8ab9f; font-size: 13px; line-height: 1.85; margin: 18px 0 0; max-width: 470px; }
+.inline-link { color: var(--lime); text-decoration: underline; text-underline-offset: 3px; }
 .takeaway { border-left: 2px solid var(--lime); margin-top: 25px; padding: 1px 0 1px 14px; }
 .takeaway span { color: var(--lime); font: 9px var(--mono); letter-spacing: .1em; }
 .takeaway p { color: #d3d5ca; font-size: 12px; line-height: 1.65; margin: 6px 0 0; }
@@ -132,6 +133,42 @@ button { font: inherit; }
 .swing-bars i { background: #ffa06eaf; }
 .distribution-axis { display: flex; justify-content: space-between; color: #797f72; font: 8px var(--mono); letter-spacing: .05em; }
 .variance-card .fine-print { margin: 13px 0 0; }
+.math-workshop { padding-block: 82px 91px; border-block: 1px solid #30352a; }
+.math-workshop > .section-wrap > h2 { margin: 11px 0 0; font: 600 clamp(34px, 4vw, 46px)/1.13 var(--display); letter-spacing: -.055em; }
+.math-workshop > .section-wrap > h2 span { color: var(--lime); }
+.workshop-intro { max-width: 820px; margin: 16px 0 31px; color: #a8ab9f; font-size: 13px; line-height: 1.8; }
+.workshop-intro b { color: var(--text); font-family: var(--mono); }
+.math-steps { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.math-step { min-width: 0; padding: 23px 25px 21px; border: 1px solid #30362b; border-radius: 8px; background: linear-gradient(140deg, #191c16, #131510); }
+.step-heading { display: flex; align-items: center; gap: 13px; min-width: 0; margin-bottom: 12px; }
+.step-heading > div { min-width: 0; }
+.step-heading > span { display: grid; place-items: center; width: 31px; height: 31px; flex: 0 0 31px; border: 1px solid #657346; border-radius: 50%; color: var(--lime); font: 11px var(--mono); }
+.step-heading h3 { margin: 3px 0 0; font: 600 18px/1.35 var(--display); letter-spacing: -.025em; }
+.math-step > p { max-width: 950px; margin: 10px 0; color: #a8ac9f; font-size: 11px; line-height: 1.8; }
+.math-step > p b { color: var(--text); }
+.math-step > p i, .math-step > p sub { color: #d6dec1; }
+.equation-box { display: grid; gap: 7px; min-width: 0; padding: 12px 14px; margin: 11px 0; border-left: 2px solid #a9ce58; background: #21251c; border-radius: 0 5px 5px 0; }
+.equation-box > * { min-width: 0; }
+.equation-box > b { color: #bec5ae; font: 9px var(--mono); letter-spacing: .025em; }
+.equation-box code { overflow-wrap: anywhere; white-space: normal; color: #eff2e5; font: 11px/1.7 var(--mono); }
+.equation-box code sub, .equation-box code sup { color: var(--lime); font-size: .78em; }
+.equation-box small { color: #929888; font: 10px/1.65 var(--sans); }
+.derivation-table-wrap { width: 100%; overflow-x: auto; margin: 13px 0; }
+.derivation-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 10px; }
+.derivation-table th { color: #8e9682; font: 8px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.derivation-table td, .derivation-table th { padding: 9px 10px; border-bottom: 1px solid #30352b; }
+.derivation-table td { color: #c4c8ba; }
+.derivation-table td:nth-child(n+2) { font-family: var(--mono); font-size: 9px; white-space: nowrap; }
+.derivation-table td:first-child { min-width: 145px; }
+.derivation-table .table-total td { border-bottom: 0; color: var(--lime); font-weight: 600; }
+.sample-tool { padding: 14px; margin: 13px 0; border: 1px solid #39412e; border-radius: 6px; background: #1d2118; }
+.sample-tool > label { display: flex; justify-content: space-between; gap: 10px; color: #d0d4c6; font-size: 10px; }
+.sample-tool > label span { color: #8e9582; font: 9px var(--mono); }
+.sample-tool input { display: block; width: 100%; margin: 12px 0 8px; accent-color: var(--lime); cursor: pointer; }
+.sample-result { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 7px 15px; color: #aeb4a0; font-size: 10px; }
+.sample-result b { color: var(--lime); font: 11px var(--mono); }
+.sample-tool > p { margin: 8px 0 0; color: #919888; font-size: 10px; line-height: 1.7; }
+.math-step > .fine-print { color: #848a7b; }
 .rng-visual { height: 260px; border: 1px solid #343a2d; border-radius: 10px; background: radial-gradient(ellipse, #c8f1690d, transparent 65%), #171a15; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .rng-orbit { display: grid; place-items: center; width: 93px; height: 93px; border: 1px solid #a8cb5c; border-radius: 50%; color: var(--lime); font: 600 25px var(--display); box-shadow: 0 0 0 10px #c8f1690b, 0 0 30px #c8f16910; }
 .rng-path { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 23px; color: #b1b5a8; font: 9px var(--mono); }
@@ -219,6 +256,8 @@ button:disabled { opacity: .55; cursor: wait; transform: none; }
 .theory-main span { display: block; color: #9da392; font-size: 9px; }
 .theory-main b { display: block; margin-top: 2px; color: var(--lime); font: 600 22px var(--display); }
 .theory-main > div + div b { color: #e7e6d8; }
+.theory-extra { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; margin-top: 8px; color: #9da392; font-size: 8px; }
+.theory-extra b { margin-left: 4px; color: #dce2d0; font: 9px var(--mono); }
 .theory-equation { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; margin-top: 8px; border-block: 1px solid #343a2b; color: #9ba18f; font: 8px var(--mono); }
 .theory-equation b { color: #daddcf; font-weight: 400; white-space: nowrap; }
 .details-toggle { display: flex; width: 100%; justify-content: space-between; align-items: center; border: 0; padding: 8px 0 0; background: transparent; color: var(--lime); text-align: left; cursor: pointer; font-size: 9px; }
@@ -229,6 +268,7 @@ button:disabled { opacity: .55; cursor: wait; transform: none; }
 .prob-list span { display: flex; justify-content: space-between; padding: 4px 5px; background: #24291e; border-radius: 3px; font-size: 8px; }
 .prob-list b { color: var(--lime); font: 8px var(--mono); }
 .equation-list { display: grid; gap: 4px; padding: 8px; border-radius: 4px; background: #13160f; font: 8px var(--mono); }
+.equation-list span { overflow-wrap: anywhere; }
 .equation-list b { color: var(--lime); font-weight: 500; }
 .math-details .fine-print { margin: 8px 0 0; }
 .insight-card { display: flex; gap: 10px; align-items: center; padding: 11px 13px; border: 1px solid #30372b; border-radius: 6px; background: #13160f; }
@@ -242,6 +282,7 @@ button:disabled { opacity: .55; cursor: wait; transform: none; }
 .advanced-icon { color: var(--lime); font: 24px var(--display); }
 .advanced-grid h3 { font: 600 14px/1.4 var(--display); margin: 12px 0 7px; }
 .advanced-grid p { color: #999e91; font-size: 11px; line-height: 1.7; margin: 0; }
+.workshop-link { margin-top: 24px; }
 .glossary-section { border-top: 1px solid #292e25; }
 .glossary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 22px; }
 .glossary-grid > div { border-top: 1px solid #30352b; padding: 13px 3px 17px 0; }
@@ -260,6 +301,7 @@ button:disabled { opacity: .55; cursor: wait; transform: none; }
   .hero-art { transform: scale(.86); }
   .lesson-layout, .reverse-layout { gap: 38px; }
   .lesson-side h2 { font-size: 34px; }
+  .derivation-table td, .derivation-table th { padding-inline: 7px; }
   .lab-grid { grid-template-columns: 1fr; }
   .simulator { max-width: none; }
   .dashboard { grid-template-columns: 1fr 1fr; align-items: start; }
@@ -291,6 +333,11 @@ button:disabled { opacity: .55; cursor: wait; transform: none; }
   .lesson-card h3 { margin-top: 17px; }
   .lesson-card p { max-width: 90%; }
   .lesson-section { padding: 60px 0; }
+  .math-workshop { padding-block: 61px 67px; }
+  .math-step { padding: 18px 15px; }
+  .equation-box { padding: 11px; }
+  .equation-box code { font-size: 10px; }
+  .derivation-table { min-width: 570px; }
   .lesson-layout, .reverse-layout { grid-template-columns: 1fr; gap: 28px; }
   .lesson-side h2 { font-size: 35px; }
   .rtp-visual { min-height: 260px; }

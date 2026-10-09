@@ -193,6 +193,14 @@
     byId("insight-text").textContent = `${state.spins.toLocaleString()} spins: session RTP is ${rtp.toFixed(1)}%. ${observation}`;
   }
 
+  function updateSampleSpread() {
+    const count = Number(byId("sample-size").value);
+    const standardError = (3.513322999668547 * 100) / Math.sqrt(count);
+    byId("sample-size-value").textContent = count.toLocaleString();
+    byId("sample-range").textContent = `${(93.2 - standardError).toFixed(1)}%–${(93.2 + standardError).toFixed(1)}%`;
+    byId("sample-spread").textContent = `At this sample size, the standard deviation of observed RTP is about ${standardError.toFixed(1)} percentage points around the 93.2% expectation.`;
+  }
+
   function finishBatch(count) {
     const pointStride = Math.max(1, Math.ceil(count / 500));
     for (let index = 0; index < count; index += 1) {
@@ -272,6 +280,8 @@
       : 'Hide the calculation <span>−</span>';
   });
 
+  byId("sample-size").addEventListener("input", updateSampleSpread);
   window.addEventListener("resize", drawChart);
+  updateSampleSpread();
   renderStats();
 })();
